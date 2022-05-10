@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checkin-app-deployment
+spec:
+  selector:
+    matchLabels:
+      name: checkin-app
+  template:
+    metadata:
+      labels:
+        name: checkin-app
+    spec:
+      containers:
+        - name: app
+          image: bomafiber/usercheckin-frontend:latest
+          ports:
+            - containerPort: 8080
